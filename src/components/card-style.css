@@ -9,7 +9,8 @@ body {
 }
 
 .card {
-    margin-top: 200px;
+    margin-top: 150px;
+    display: inline-block;
 }
 
 .card:hover {
@@ -32,5 +33,17 @@ body {
 }
 
 .card-img-top {
-    height: 35vw;
+    height: 20vw;
+    width: 15vw;
+}
+
+.card-box {
+    display: flex;
+    flex-direction: row;
+    width: 30vw;
+}
+
+.header {
+    margin-top: 100px;
+    text-align: center;
 }

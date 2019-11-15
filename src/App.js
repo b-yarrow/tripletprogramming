@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from './components/Cards';
+// import Card from './CardUI';
+import poisonIvy from './assets/poison-ivy.jpg';
 
 
 // proxy url -> append this before your API call
@@ -47,11 +49,17 @@ export default class App extends Component {
 
   render() {
     console.log(this.state.heroData)
+
+    const heros = this.state.heroData && this.state.heroData.map((hero, index)=>
+    
+      <Card image={hero.image} name={hero.name}/>
+    )
+
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className='header'>It's good to be bad</h1>
-          <Card />
+          <h1 className='header'>Superheros and Supervillains</h1>
+          {heros}
         </header>
       </div>
     );
