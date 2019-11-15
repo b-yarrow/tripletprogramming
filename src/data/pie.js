@@ -1,4 +1,8 @@
-export default{
+import React from 'react'
+
+export default function pie(props) {
+    return (
+        <div>
     labels: [
         "height" ,
         "weight" ,
@@ -17,8 +21,15 @@ export default{
                 'purple',
                 'green'
             ]
+        </div>
+    )
         }
-    ]
+}
+
+
+
+
+
 
 
 
