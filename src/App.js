@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Card from './components/Cards';
+
 
 // proxy url -> append this before your API call
 const corsUrl = "https://cors-anywhere.herokuapp.com/";
@@ -47,8 +50,8 @@ export default class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>SUPERHERO PAGE</h1>
-          {/* <Api /> */}
+          <h1 className='header'>It's good to be bad</h1>
+          <Card />
         </header>
       </div>
     );

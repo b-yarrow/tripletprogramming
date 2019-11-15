@@ -1,0 +1,36 @@
+body {
+    background: radial-gradient(#e5e5e5, #ffff, #e5e5e5);
+}
+
+.slogan {
+    display: inline-block;
+    width: 30vw;
+    height: 30vw;
+}
+
+.card {
+    margin-top: 200px;
+}
+
+.card:hover {
+    box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.253) !important;
+}
+
+.card-body {
+    padding: 30px 0;
+}
+
+.card-text {
+    font-size: 16px;
+    padding: 20px;
+}
+
+.btn {
+    width: 15vw;
+    align-self: center;
+    margin: 40px;
+}
+
+.card-img-top {
+    height: 35vw;
+}
