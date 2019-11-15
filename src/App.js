@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react'
 import axios from 'axios'
-import PieChart from './components/charts.js'
-import PieData from "./data/pie.js"
+// import PieChart from './components/charts.js'
+// import PieData from "./data/pie.js"
 
 // proxy url -> append this before your API call
 const corsUrl = "https://cors-anywhere.herokuapp.com/";
@@ -14,8 +14,38 @@ const superheroUrl = id =>
 export default class App extends Component {
   state = {
     heroData: [],
-    loading: false
+    loading: false,
+    chartData: {
+      labels: [
+        "height",
+        "weight",
+        "age"
+      ],
+      datasets: [
+        {
+          data: [],
+          backgroundColor: [
+            'red',
+            'blue',
+            'yellow'
+          ],
+          hoverBackgroundColor: [
+            'black',
+            'purple',
+            'green'
+          ]
+        }
+      ]
+    }
   }
+
+  fillChart = () => {
+    this.setState({
+      chartData: { ...this.state.chartData, data: this.state.heroData[0].powerstats.combat }
+    }, console.log(this.state.chartData))
+  }
+
+
 
   componentDidMount() {
     let idMax = 731;
@@ -47,14 +77,15 @@ export default class App extends Component {
 
   render() {
     console.log(this.state.heroData)
+    console.log(this.fillchart)
     return (
       <div className="App">
         <header className="App-header">
           <h1>SUPERHERO PAGE</h1>
           {/* <Api /> */}
         </header>
-      <PieChart title="Superhero Chart" data={PieData} height={20} width={20}/>
+        {/* <PieChart title="Superhero Chart" data={PieData} height={20} width={20} /> */}
       </div>
     )
-        }
-      }
+  }
+}
